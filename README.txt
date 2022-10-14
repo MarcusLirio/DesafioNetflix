@@ -3,17 +3,17 @@
 Objetivo: Desenvolver uma SPA (SINGLE PAGE APPLICATION) apenas com HTML5, CSS3, e Javascript, com base no json da Netflix que foi gerado.
 
 Passos:
-	1. Criar a página HTML contendo uma tabela para cada gênero, uma abaixo da outra separando as tabelas pelo titulo do gênero com uma tag h1;
+	ok1. Criar a página HTML contendo uma tabela para cada gênero, uma abaixo da outra separando as tabelas pelo titulo do gênero com uma tag h1;
 	
-	2. As tabelas deverão seguir o padrão <table> do html, e conter as seguintes colunas referentes ao filme: (Id, Nome, Classificação Etária, Avaliação, Ativo, Data de Criação, Imagem, Assistir);
+	ok2. As tabelas deverão seguir o padrão <table> do html, e conter as seguintes colunas referentes ao filme: (Id, Nome, Classificação Etária, Avaliação, Ativo, Data de Criação, Imagem, Assistir);
 	
-	3. A primeira linha da tabela onde ficam os titulos das colunas, deverá estar com um background color e cor de fonte diferente para destacar, e com o texto centralizado e em negrito;
+	ok3. A primeira linha da tabela onde ficam os titulos das colunas, deverá estar com um background color e cor de fonte diferente para destacar, e com o texto centralizado e em negrito;
 	
 	4. A coluna de Avaliação deverã exibir estrelinhas amarelas, de acordo com a número da avaliação;
 	
-	5. Caso a classificação etária seja de 18 anos, a célula "<td>" da classificação deverá ser marcada com um background color preto e cor do texto branca em negrito;
+	ok5. Caso a classificação etária seja de 18 anos, a célula "<td>" da classificação deverá ser marcada com um background color preto e cor do texto branca em negrito;
 	
-	6. Caso o filme esteja Inativo (ativo = false) pintar toda a linha "<tr>" de cinza bem claro;
+	ok6. Caso o filme esteja Inativo (ativo = false) pintar toda a linha "<tr>" de cinza bem claro;
 
 	7. Na coluna "Assistir" colocar um icone de Play para cada filme; ok	
 

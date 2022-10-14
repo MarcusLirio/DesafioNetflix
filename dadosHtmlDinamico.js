@@ -1,15 +1,17 @@
 
-function ConstroiTabelaFilmes() {
+function ConstroiTabelaFilmes() 
+{
     var generos = ArrayDeFilmes();
 
     var html = "";
 
+    var estrelinha = "";
     for (var i = 0 ; i < generos.length; i++)
     {
             var genero = generos[i];
-
+            var titulo = (genero.genero) ? 'genero':'';
             html += 
-                "<h1>" + genero.nome + 
+                "<h1 class='"+titulo+"'>" + genero.genero + 
                 "</h1> \
                 <table class='tblFilmes'> \
                 <thead> \
@@ -21,7 +23,7 @@ function ConstroiTabelaFilmes() {
                 <th>Ativo</th> \
                 <th>Data Criacao</th> \
                 <th>Avaliacao</th> \
-                <th>Play</th> \
+                <th>Assistir</th> \
                 </tr> \
                 </thead> \
                 <tbody id='tbodyFilmes'>";
@@ -29,20 +31,21 @@ function ConstroiTabelaFilmes() {
             for (var x = 0; x < genero.filmes.length; x++)
             {
                 var filme = genero.filmes[x];			
-                debugger
-                var fraseBotao = "Filme (" + filme.nome + ") Executando.";
-                var classeLinha=  (filme.ativo == true) ? 'tdativoTrue':'tdativoFalse';
+                var storage = localStorage.getItem("filmeExecutando");
+                var classeLinha = (filme.ativo == true) ? 'tdativoTrue':'tdativoFalse';
+                var classFicacao = (filme.classificacaoIndicativa >= 18) ? 'etaria':'';
 
+                
                 html += 
-                    "<tr> \
+                    "<tr class='"+classeLinha+"'> \
                     <td>" + filme.filmeId + "</td> \
                     <td>" + filme.nome + "</td> \
-                    <td>" + filme.classificacaoIndicativa + "</td> \
+                    <td class='"+classFicacao+"'>" + filme.classificacaoIndicativa + "</td> \
                     <td>" + filme.image + "</td> \
-                    <td class='"+classeLinha+"'>" + filme.ativo + "</td> \
+                    <td>" + filme.ativo + "</td> \
                     <td>" + filme.dataCriacao + "</td> \
                     <td>" + filme.avaliacao + "<td> \
-                        <button name='' onclick='alert(\"" + fraseBotao + "\")'>&#10148</button> \
+                        <button name='' onclick='alert(\"" + storage + "\")'>&#10148</button> \
                     </td> \
                     </tr>";   
             }
@@ -50,35 +53,6 @@ function ConstroiTabelaFilmes() {
             html += 
             "</tbody> \
             </table>";		
+            document.getElementById('containerTabelasFilmes').innerHTML = html;
     }
-
-    document.getElementById('containerTabelasFilmes').innerHTML = html;
-
-    
 }
-
-
-
-
-   
-
-
-
-
-
-
-
-   
-  
- 
-    // document.getElementsByClassName("tdativo")[0].style.backgroundColor = "red";
-    //     console.log(document.getElementsByClassName("tdativo")[0]).style.backgroundColor = "red";
-    // }
-    
-    // else (filme.ativo == true)
-    // {
-    //     console.log(document.getElementsByClassName('tdativo')[0].style.backgroundColor="red");
-    // }
-
-
-
