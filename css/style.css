@@ -1,0 +1,71 @@
+body{
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+h1{
+    font-style: inherit;
+    color: red;
+} 
+
+h3{
+    color: white;
+}
+
+.container{
+    text-align: left;
+}
+
+ul.avaliacao {
+    margin: 0;
+    padding: 0;
+}
+
+.star-icon{
+    list-style-type: none;
+    cursor: pointer;
+    color: #fffb05;
+    display: inline-flex;                                           
+}
+
+.star-icon::before{ 
+    content: "\2605";                        
+}
+
+.star-icon.ativo ~ .star.icon::before{
+    content: "\2605";
+} 
+
+table{
+    overflow-x: hidden;
+}
+
+.tblFilmes {     
+    color: #ffffff; 
+    text-align: center; 
+    border: 1px solid #FF0000;
+}
+
+.tblFilmes thead tr th {
+    background-color: #242424;
+    color: #fff; 
+}
+
+.tblFilmes tr th, .tblFilmes tr td {
+    text-align: center; 
+    border: 1px solid #FF0000;
+    width: 188px;
+}
+
+.tblFilmes tr td.imgFilme {
+    background:transparent;
+}
+
+.tblFilmes tr td.imgFilme img {
+    width: 200px;
+}
+
+.tr td .tdativo {
+    background-color: #FF0000;
+
+}
