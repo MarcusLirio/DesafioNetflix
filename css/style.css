@@ -65,7 +65,11 @@ table{
     width: 200px;
 }
 
-.tr td .tdativo {
-    background-color: #FF0000;
+tr .tdativoFalse {
 
+    background-color: #FF0000;
+}
+tr .tdativoTrue {
+
+    background-color: #1eff00;
 }
