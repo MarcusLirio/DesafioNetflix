@@ -1,11 +1,29 @@
 
+function SetStorage()
+{
+
+
+    localStorage.setItem('filmeExecutando','Ok')
+
+    let text;
+    if (confirm(`Deseja pausar ?`)) {
+        text = 'Filme pausado!'
+        localStorage.removeItem('filmeExecutando')
+    } 
+    else {
+        text = 'Filme executando !'
+        localStorage.setItem('filmeExecutando','Ok')
+    }
+    
+    
+}
+
 function ConstroiTabelaFilmes() 
 {
     var generos = ArrayDeFilmes();
 
     var html = "";
 
-    var estrelinha = "";
     for (var i = 0 ; i < generos.length; i++)
     {
             var genero = generos[i];
@@ -31,10 +49,8 @@ function ConstroiTabelaFilmes()
             for (var x = 0; x < genero.filmes.length; x++)
             {
                 var filme = genero.filmes[x];			
-                var storage = localStorage.getItem("filmeExecutando");
                 var classeLinha = (filme.ativo == true) ? 'tdativoTrue':'tdativoFalse';
                 var classFicacao = (filme.classificacaoIndicativa >= 18) ? 'etaria':'';
-
                 
                 html += 
                     "<tr class='"+classeLinha+"'> \
@@ -45,7 +61,7 @@ function ConstroiTabelaFilmes()
                     <td>" + filme.ativo + "</td> \
                     <td>" + filme.dataCriacao + "</td> \
                     <td>" + filme.avaliacao + "<td> \
-                        <button name='' onclick='alert(\"" + storage + "\")'>&#10148</button> \
+                        <button name='' onclick='SetStorage()'>&#10148</button> \
                     </td> \
                     </tr>";   
             }
